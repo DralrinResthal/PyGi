@@ -45,19 +45,19 @@ def create_app(test_config=None):
         """%(asctime)s %(levelno)s:%(levelname)s %(message)s"""
     )
 
-    a_log = log.CustomLogger(
-        name="alog",
+    app_log = log.CustomLogger(
+        name="applog",
         log_file=os.path.join(log_dir, "application.log"),
         level=logging.INFO,
         formatter=logging.Formatter(application_formatter),
-    ).create_logger()
+    ).createrr_logger()
 
-    e_log = log.CustomLogger(
-        name="elog",
+    err_log = log.CustomLogger(
+        name="errlog",
         log_file=os.path.join(log_dir, "error.log"),
         level=logging.WARNING,
         formatter=logging.Formatter(error_formatter),
-    ).create_logger()
+    ).createrr_logger()
 
     # Application setup
     with app.app_context():
