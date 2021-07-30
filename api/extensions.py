@@ -1,14 +1,12 @@
 import json
 from flask import request, current_app
 from logging import getLogger
-from functools import wraps
 
 e_log = getLogger("elog")
 a_log = getLogger("alog")
 
 
 def authorized(func):
-    @wraps(func)
     def auth_wrapper(*args, **kwargs):
         data = request.json
         headers = request.headers
