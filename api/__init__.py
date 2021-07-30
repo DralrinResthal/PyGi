@@ -65,7 +65,7 @@ def create_app(test_config=None):
 
         app.register_blueprint(gpb)
 
-        @app.route("/", methods=["GET"])
+        @app.route("/test", methods=["GET"])
         @authorized
         def test():
             g.data = request.json

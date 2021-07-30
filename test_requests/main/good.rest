@@ -1,0 +1,28 @@
+# If you would like to use this file to test endpoints
+# or to add futher requests for more testing purposes
+# Please install the REST Client VsCode extension by Huachao Mao
+# All requests in this file should return OK or as otherwise expected.
+
+GET http://127.0.0.1:5000/test
+content-type: application/json
+
+{
+  "authToken": "FXbWZBmGstqCJP8D7P3kzguthu479dFv",
+  "userInfo": {
+    "userName": "Bob Pickles",
+      "userEmail": "bob@pickles.com"
+  },
+  "env": "test",
+  "parameters": {
+    "a": {
+      "value": "some dumb value",
+      "secret": true,
+      "comment": "some dumb comment"
+    },
+    "b": {
+      "value": "another dumb value",
+      "secret": false,
+      "comment": "another dumb comment"
+    }
+  }
+}
