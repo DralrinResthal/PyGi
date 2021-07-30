@@ -61,6 +61,9 @@ def create_app(test_config=None):
 
     # Application setup
     with app.app_context():
+        from .git.routes import bp as gpb
+
+        app.register_blueprint(gpb)
 
         @app.route("/", methods=["GET"])
         @authorized
